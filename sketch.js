@@ -27,8 +27,9 @@ Diagram.prototype.drawCircle = function(){
 Diagram.prototype.drawNumbers = function(){
 	let a = 2*Math.PI/this.points;
 	for(let i = 0; i < this.points; i++){
-		let x = this.radius * Math.cos(a*i - Math.PI/2);
-		let y = this.radius * Math.sin(a*i - Math.PI/2);
+		let w = context.measureText(""+i).width;
+		let x = (this.radius+w) * Math.cos(a*i - Math.PI/2);
+		let y = (this.radius+w) * Math.sin(a*i - Math.PI/2);
 		context.strokeText(""+i, this.pos.x + x, this.pos.y + y);
 	}
 }
@@ -53,7 +54,7 @@ Diagram.prototype.drawLines = function(){
 Diagram.prototype.draw = function(){
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	this.drawCircle();
-	//this.drawNumbers();
+	this.drawNumbers();
 	this.drawLines();
 }
 
