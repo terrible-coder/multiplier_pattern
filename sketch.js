@@ -12,7 +12,7 @@ context.strokeStyle = '#f3a314'
 
 function Diagram(posx, posy){
 	this.pos = {x: posx, y: posy};
-	this.points = 20;
+	this.points = pointControl.value;
 	this.multiplier = multControl.value;
 	this.radius = 0.9*Math.min(canvas.width, canvas.height)/2;
 }
