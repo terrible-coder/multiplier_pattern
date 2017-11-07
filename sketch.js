@@ -53,7 +53,7 @@ Diagram.prototype.drawLines = function(){
 Diagram.prototype.draw = function(){
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	this.drawCircle();
-	this.drawNumbers();
+	//this.drawNumbers();
 	this.drawLines();
 }
 
